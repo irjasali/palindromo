@@ -1,15 +1,30 @@
-const Palindromo=(str)=> {
-      str = str.toLowerCase().replace(/[\W_]/g, '');
+let cadenaOriginal =document.getElementById('cadena').value;
+
+const Palindromo=()=> {
+    
+
+
+    if (cadenaOriginal === "") alert("Por favor introduzca una cadena valida");
+    str = cadenaOriginal.toLowerCase().replace(/[\W_]/g, '');
     console.log(str)
     let len = str.length - 1
     console.log(len)
     for(var i = 0; i < len/2; i++) {
       console.log(str[i] + "!==" + str[len-i]);
       if(str[i] !== str[len-i]) {
-        return false + "No es un palindromo";
+        document.getElementById('resultado').innerText=" La cadena: ["+cadenaOriginal  +"] no es un palindromo";
+        return false ;
       }
     }
-    return true;   
+    document.getElementById('resultado').innerText= "La cadena: ["+cadenaOriginal  +"] si es un palindromo" ;
+    return true;
   }
   
-  console.log(Palindromo("racedcar"));
+
+  const limpiar=()=>{
+    document.getElementById('resultado').innerHTML="";
+    document.getElementById('cadena').value="";
+
+
+  }
+  console.log(Palindromo("racecar"));

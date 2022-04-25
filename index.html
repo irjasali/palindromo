@@ -26,15 +26,14 @@
                     igual en ambos sentidos, es decir, que suena del mismo modo leída de izquierda a derecha y de
                     derecha a izquierda.
                 </p>
-                <button type="button" class="btn btn-primary">Go somewhere</button>
+              
             </div>
         </div>
         <div class="card m-3 p-3">
             <div class="card-body text-center">
-                <div class="input-group ">
-                    <input type="text" class="form-control" placeholder="Cadena a comparar"
-                        aria-label="Cadena a comparar" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-primary" type="button" id="button-addon2">Comparar</button>
+                <div class="input-group">
+                    <input  id="cadena" type="text" class="form-control" placeholder="Cadena a comparar">                 
+                    <button class="btn btn-outline-primary" type="button"  onclick="Palindromo()">Comparar</button>
                 </div>
 
                 <button type="button" class="btn btn-primary btn-lg m-3" onclick="Palindromo()">
@@ -44,6 +43,13 @@
                     Limpiar
                 </button>
 
+            </div>
+        </div>
+        <div id="card m-3 p-3">
+            <div class="card-body text-center">
+            <div class="alert alert-info" role="alert">
+                <p id="resultado"></p>
+              </div>
             </div>
         </div>
 
