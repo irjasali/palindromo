@@ -1,9 +1,31 @@
-let  keyP = document.getElementById('cadena');
-
-keyP.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-       Palindromo();
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 3);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+        Palindromo();
+      } else {
+         width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }   
     }
+  }
+ 
+}
+
+let keyP = document.getElementById("cadena");
+
+keyP.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    move(); 
+  }
 });
 
 const Palindromo = () => {
@@ -28,11 +50,14 @@ const Palindromo = () => {
       "La cadena: [" + cadenaOriginal + "] si es un palindromo";
     return true;
   }
-}
+};
 
 const limpiar = () => {
+  var elem = document.getElementById("myBar");
   document.getElementById("resultado").innerHTML = "";
   document.getElementById("cadena").value = "";
   document.getElementById("cadena").focus();
+  elem.style.width =0;
+  elem.innerHTML =  "";
 };
 // console.log(Palindromo("racecar"));
