@@ -8,7 +8,7 @@ keyP.addEventListener('keydown', (e) => {
 
 const Palindromo = () => {
   let cadenaOriginal = document.getElementById("cadena").value;
-  
+
   if (cadenaOriginal === "") {
     alert("Por favor introduzca una cadena valida");
   } else {
@@ -33,5 +33,6 @@ const Palindromo = () => {
 const limpiar = () => {
   document.getElementById("resultado").innerHTML = "";
   document.getElementById("cadena").value = "";
+  document.getElementById("cadena").focus();
 };
 // console.log(Palindromo("racecar"));
